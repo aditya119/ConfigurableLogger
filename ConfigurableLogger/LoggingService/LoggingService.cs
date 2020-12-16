@@ -58,7 +58,7 @@ namespace ConfigurableLogger
             string logFilePath = GetLogFilePath();
             try
             {
-                _locker.AcquireReaderLock(1000);
+                _locker.AcquireWriterLock(1000);
                 using StreamWriter sw = File.Exists(logFilePath) ? File.AppendText(logFilePath) : File.CreateText(logFilePath);
                 await sw.WriteLineAsync(message);
             }
