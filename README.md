@@ -1,3 +1,4 @@
+![.NET](https://github.com/aditya119/ConfigurableLogger/workflows/.NET/badge.svg)
 ### Configurable Logger
 
 ---
