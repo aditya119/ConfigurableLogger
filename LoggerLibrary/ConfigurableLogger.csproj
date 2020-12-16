@@ -4,18 +4,19 @@
     <TargetFramework>net5.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>1.0.0</Version>
     <Authors>Aditya Sharma</Authors>
     <Company />
-    <RepositoryUrl>https://github.com/aditya119/LoggerLibrary</RepositoryUrl>
+    <RepositoryUrl>https://github.com/aditya119/ConfigurableLogger</RepositoryUrl>
     <RepositoryType>Source Code</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageId>ConfigurableLogger</PackageId>
     <NeutralLanguage>en-IN</NeutralLanguage>
-    <PackageReleaseNotes>Release</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/aditya119/LoggerLibrary</PackageProjectUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/aditya119/ConfigurableLogger</PackageProjectUrl>
     <PackageTags>Logger</PackageTags>
     <Description>ConfigurableLogger is an easy-to-use, and configurable logger.</Description>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
