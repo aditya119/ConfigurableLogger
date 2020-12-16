@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Aditya Sharma</Authors>
     <Company>aditya119</Company>
     <RepositoryUrl>https://github.com/aditya119/ConfigurableLogger</RepositoryUrl>
@@ -12,7 +12,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageId>ConfigurableLogger</PackageId>
     <NeutralLanguage>en-IN</NeutralLanguage>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>Fix Exception: Attempt to release a lock that is not owned by the calling thread.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/aditya119/ConfigurableLogger</PackageProjectUrl>
     <PackageTags>Logger</PackageTags>
     <Description>ConfigurableLogger is an easy-to-use, and configurable logger.</Description>
