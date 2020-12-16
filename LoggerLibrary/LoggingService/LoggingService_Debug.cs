@@ -21,7 +21,7 @@ namespace ConfigurableLogger
             }
         }
 
-        public void LogDebug<T>(string message, T model)
+        public void LogDebug<T>(string message, T model) where T : class
         {
             if (_logConfig.LogLevel == "Debug")
             {
@@ -30,7 +30,7 @@ namespace ConfigurableLogger
             }
         }
 
-        public async Task LogDebugAsync<T>(string message, T model)
+        public async Task LogDebugAsync<T>(string message, T model) where T : class
         {
             if (_logConfig.LogLevel == "Debug")
             {
