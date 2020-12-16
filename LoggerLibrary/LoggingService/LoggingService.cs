@@ -1,12 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LoggerLibrary
+namespace ConfigurableLogger
 {
-    public class LoggingService : ILoggingService
+    public partial class LoggingService : ILoggingService
     {
         private readonly LogConfigModel _logConfig;
         private readonly ReaderWriterLock _locker;
@@ -15,16 +14,6 @@ namespace LoggerLibrary
         {
             _logConfig = logConfig;
             _locker = new ReaderWriterLock();
-        }
-
-        private static string GetExceptionString(Exception exception)
-        {
-            string message = $"[ERROR]: {exception.Message}\n{exception.StackTrace}\n{exception.Data}";
-            if (exception.InnerException is not null)
-            {
-                message = $"{message}\n{exception.InnerException.Message}\n{exception.InnerException.StackTrace}";
-            }
-            return message;
         }
 
         private string GetLogFilePath()
@@ -77,52 +66,6 @@ namespace LoggerLibrary
             {
                 _locker.ReleaseWriterLock();
             }
-        }
-
-        public void LogDebug(string message)
-        {
-            if (_logConfig.LogLevel == LogLevel.Debug)
-            {
-                Log($"[DEBUG]: {message}");
-            }
-        }
-
-        public async Task LogDebugAsync(string message)
-        {
-            if (_logConfig.LogLevel == LogLevel.Debug)
-            {
-                await LogAsync($"[DEBUG]: {message}");
-            }
-        }
-
-        public void LogInformation(string message)
-        {
-            LogLevel[] includeLogLevels = new LogLevel[] { LogLevel.Debug, LogLevel.Information };
-            if (includeLogLevels.Contains(_logConfig.LogLevel))
-            {
-                Log($"[INFO]: {message}");
-            }
-        }
-
-        public async Task LogInformationAsync(string message)
-        {
-            LogLevel[] includeLogLevels = new LogLevel[] { LogLevel.Debug, LogLevel.Information };
-            if (includeLogLevels.Contains(_logConfig.LogLevel))
-            {
-                await LogAsync($"[INFO]: {message}");
-            }
-        }
-
-        public void LogError(Exception exception)
-        {
-            string message = GetExceptionString(exception);
-            Log(message);
-        }
-
-        public async Task LogErrorAsync(Exception exception)
-        {
-            string message = GetExceptionString(exception);
-            await LogAsync(message);
         }
     }
 }
