@@ -1,3 +1,4 @@
 /.vs
 /ConfigurableLogger/bin
 /ConfigurableLogger/obj
+/ConfigurableLogger/nuget.config
