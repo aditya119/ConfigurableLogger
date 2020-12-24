@@ -19,7 +19,7 @@ Add `LogConfigModel` as a singleton service to provide required configurations.
 - `LogConfigModel.LogFolder` stores the path to folder where log files will be stored. Use "@Console" to log to console.
 - `LogConfigModel.LogFilenamePrefix` stores a prefix for the generated log files. Default is set to "app". Sample log file name `app_16-Dec-2020.log`.
 
-Add `LoggingService` as a scoped service with `ILoggingService`.
+Use `services.AddConfigurableLogger(logConfigModel)` in `Startup.ConfigureServices`.
 
 Inject `ILoggingService` where necessary and log data.
 
